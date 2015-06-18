@@ -29,7 +29,7 @@ module Dragonfly
         end
 
         # Add callbacks
-        before_save :save_dragonfly_attachments if respond_to?(:before_save)
+        after_save :save_dragonfly_attachments if respond_to?(:before_save)
         before_destroy :destroy_dragonfly_attachments if respond_to?(:before_destroy)
 
         # Register the new attribute
